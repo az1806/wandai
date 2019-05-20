@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-module
   type="WEB"
-  name="WanDai"
-  id="myeclipse.1557764734809"
-  context-root="/WanDai"
+  name="MoYin"
+  id="myeclipse.1558339595698"
+  context-root="/MoYin"
   j2ee-spec="5.0"
-  archive="WanDai.war">
+  archive="MoYin.war">
   <attributes>
     <attribute name="webrootdir" value="WebRoot" />
   </attributes>
