@@ -8,7 +8,7 @@ import com.mysql.jdbc.ResultSet;
 import com.mysql.jdbc.Statement;
 
 public class DBManager {
-	private static final String db_name = "moyin"; 
+	//private static final String db_name = "moyin"; 
 
 	public static int updateSQL(String sql) {
 		try {
@@ -21,7 +21,7 @@ public class DBManager {
 		Statement sta = null;
 		try {
 			con = (Connection) DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/"+db_name, "root", "admin");
+					"jdbc:mysql://localhost:3306/moyin","root","admin");
 			System.out.println("数据库连接成功！");
 			sta = (Statement) con.createStatement();
 			int n = sta.executeUpdate(sql);
@@ -59,7 +59,7 @@ public class DBManager {
 		Statement sta = null;
 		try {
 			con = (Connection) DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/"+db_name, "root", "admin");
+					"jdbc:mysql://localhost:3306/moyin","root","admin");
 			sta = (Statement) con.createStatement();
 			ResultSet rs = (ResultSet) sta.executeQuery(sql);
 			return rs;

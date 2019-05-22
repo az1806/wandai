@@ -103,6 +103,8 @@ public class Company {
 				+ wangzhanditu + "]";
 	}
 	
-	
+	public static void main (String[] a){
+		
+	}
 	
 }
