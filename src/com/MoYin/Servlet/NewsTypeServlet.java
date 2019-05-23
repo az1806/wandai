@@ -36,7 +36,7 @@ public class NewsTypeServlet extends HttpServlet {
 		System.out.println("qwe");
 		
 		request.setAttribute("XinWenClass", nts);
-		request.getRequestDispatcher("/newstype.jsp").forward(request, response);
+		request.getRequestDispatcher("/newstype.jsp").include(request, response);
 	}
 
 	/**

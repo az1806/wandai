@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*,com.MoYin.Entity.*;" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -7,7 +7,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html lang="zh-cn">
 <head>
-    <title>魔音</title>
+    <title>某某家具设计公司企业官网-模板之家</title>
     ﻿<meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="format-detection" content="telephone=no">
@@ -35,33 +35,20 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </head>
 <body>
 
-<jsp:include page="/HeadServlet"></jsp:include>
-<section class="article-content">
- <jsp:include page="/NewsTypeServlet"></jsp:include>
-        <ul>
-            <li>
-            <%    List<article_list> al = ( List<article_list> ) request.getAttribute("xinwenbiao");
-                %>
-                <% 
-                   for(int i=0;i<al.size();i++) {
-                     %>
-                <div class="article-date">
-                    <strong><%=al.get(i).getId() %></strong>
-                    <p><%=al.get(i).getTime() %></p>
-                </div>
-                <div class="article-info"> 
-                    <a href="article_list_content.html">
-                        <h3><%=al.get(i).getName() %></h3>
-                        <p><%=al.get(i).getNeirong() %></p>
-                    </a>
-                </div>
-                <%
-                   }
-                   %>
-            </li>
-        </ul>
-        
-</section>
-﻿ <jsp:include page="/FootServlet"></jsp:include>
+<div class="am-slider am-slider-default" data-am-flexslider="{playAfterPaused: 8000}">
+    <ul class="am-slides">
+        <li><img src="images/banner.jpg" alt="" ></li>
+        <li><img src="images/banner.jpg" alt="" ></li>
+        <li><img src="images/banner.jpg" alt="" ></li>
+        <li><img src="images/banner.jpg" alt="" ></li>
+    </ul>
+</div>
+
+<section class="index-section">
+    <div>
+        <span></span>
+        <span></span>
+    </div>
+    
 </body>
 </html>

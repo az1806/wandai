@@ -34,16 +34,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript" src="js/main.min.js?t=1"></script>
 </head>
 <body>
-<jsp:include page="/HeadServlet"></jsp:include>
 
-<div class="am-slider am-slider-default" data-am-flexslider="{playAfterPaused: 8000}">
-    <ul class="am-slides">
-        <li><img src="images/banner.jpg" alt="" ></li>
-        <li><img src="images/banner.jpg" alt="" ></li>
-        <li><img src="images/banner.jpg" alt="" ></li>
-        <li><img src="images/banner.jpg" alt="" ></li>
-    </ul>
-</div>
 <div>
     <header class="header-article-list">
         <div class="article-position">新闻资讯</div>
@@ -63,83 +54,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </div>
     </header>
 </div>
-<section class="article-content">
-        <ul>
-            <li>
-                <div class="article-date">
-                    <strong>01</strong>
-                    <p>2017/05</p>
-                </div>
-                <div class="article-info">
-                    <a href="article_list_content.html">
-                        <h3>家具有哪些类型?</h3>
-                        <p>按家具从风格上可以分为：现代家具、欧式古典家具、美式家具、中式古典家具（也就是红木家具），还有近两年比较流行的新古典...</p>
-                    </a>
-                </div>
-            </li>
 
-            <li>
-                <div class="article-date">
-                    <strong>01</strong>
-                    <p>2017/05</p>
-                </div>
-                <div class="article-info">
-                    <a href="article_list_content.html">
-                        <h3>家具有哪些类型?</h3>
-                        <p>按家具从风格上可以分为：现代家具、欧式古典家具、美式家具、中式古典家具（也就是红木家具），还有近两年比较流行的新古典...</p>
-                    </a>
-                </div>
-            </li>
-            <li>
-                <div class="article-date">
-                    <strong>01</strong>
-                    <p>2017/05</p>
-                </div>
-                <div class="article-info">
-                    <a href="article_list_content.html">
-                        <h3>家具有哪些类型?</h3>
-                        <p>按家具从风格上可以分为：现代家具、欧式古典家具、美式家具、中式古典家具（也就是红木家具），还有近两年比较流行的新古典...</p>
-                    </a>
-                </div>
-            </li>
-            <li>
-                <div class="article-date">
-                    <strong>01</strong>
-                    <p>2017/05</p>
-                </div>
-                <div class="article-info">
-                    <a href="article_list_content.html">
-                        <h3>家具有哪些类型?</h3>
-                        <p>按家具从风格上可以分为：现代家具、欧式古典家具、美式家具、中式古典家具（也就是红木家具），还有近两年比较流行的新古典...</p>
-                    </a>
-                </div>
-            </li>
-            <li>
-                <div class="article-date">
-                    <strong>01</strong>
-                    <p>2017/05</p>
-                </div>
-                <div class="article-info">
-                    <a href="article_list_content.html">
-                        <h3>家具有哪些类型?</h3>
-                        <p>按家具从风格上可以分为：现代家具、欧式古典家具、美式家具、中式古典家具（也就是红木家具），还有近两年比较流行的新古典...</p>
-                    </a>
-                </div>
-            </li>
-            <li>
-                <div class="article-date">
-                    <strong>01</strong>
-                    <p>2017/05</p>
-                </div>
-                <div class="article-info">
-                    <a href="article_list_content.html">
-                        <h3>家具有哪些类型?</h3>
-                        <p>按家具从风格上可以分为：现代家具、欧式古典家具、美式家具、中式古典家具（也就是红木家具），还有近两年比较流行的新古典...</p>
-                    </a>
-                </div>
-            </li>
-        </ul>
-</section>
-﻿ <jsp:include page="/FootServlet"></jsp:include>
+
+
 </body>
 </html>

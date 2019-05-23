@@ -10,6 +10,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
+ <base href="<%=basePath%>">
 <title>魔音</title> ﻿
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -66,10 +67,10 @@
 		</button>
 		<nav>
 		<ul class="header-nav-ul am-collapse am-in">
-			<li class="on"><a href="index.html" name="index">首页</a></li>
+			<li class="on"><a href="index.jsp" name="index">首页</a></li>
 			<li><a href="about.html" name="about">关于我们</a></li>
 			<li><a href="productlist.html" name="show">产品展示</a></li>
-			<li><a href="article_list.html" name="new">新闻资讯</a></li>
+			<li><a href="article_listservlet" name="new">新闻资讯</a></li>
 			<li><a href="contact.html" name="message">联系我们</a>
 				<div class="secondary-menu">
 
