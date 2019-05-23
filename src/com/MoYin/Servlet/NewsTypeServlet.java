@@ -30,7 +30,7 @@ public class NewsTypeServlet extends HttpServlet {
 		
 		
 		response.setCharacterEncoding("UTF-8");
-		NewsTypeDao ntd=(NewsTypeDao) new NewsTypeDaoImpl();
+		NewsTypeDao ntd= new NewsTypeDaoImpl();
 		List<NewsType> nts=ntd.queryNewsType();
 		
 		System.out.println("qwe");

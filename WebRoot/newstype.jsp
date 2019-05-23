@@ -53,7 +53,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 <% 
                    for(int i=0;i<nts.size();i++) {
                      %>
-                     <li><a href="article_list.html"><%= nts.get(i).getName() %></a></li>
+                     <li><a href="article_list.jsp"><%= nts.get(i).getName() %></a></li>
                      <%
                    }
                    %>

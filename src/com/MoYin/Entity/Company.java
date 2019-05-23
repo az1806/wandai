@@ -1,7 +1,6 @@
 package com.MoYin.Entity;
 
 public class Company {
-
 	private int jianjieid ;
 	private String qiyename;
 	private String qiyefengmao;
