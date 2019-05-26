@@ -10,7 +10,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
- <base href="<%=basePath%>">
 <title>魔音</title> ﻿
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -37,6 +36,12 @@
 <script type="text/javascript" src="lib/amazeui/amazeui.min.js"></script>
 <script type="text/javascript" src="lib/raty/jquery.raty.js"></script>
 <script type="text/javascript" src="js/main.min.js?t=1"></script>
+
+<meta http-equiv="pragma" content="no-cache">
+<meta http-equiv="cache-control" content="no-cache">
+<meta http-equiv="expires" content="0">
+<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+<meta http-equiv="description" content="This is my page">
 </head>
 <body>
 	<header>
@@ -47,8 +52,8 @@
 			</div>
 			<div class="header-title div-inline">
 				<strong>
-				<% Company com = (Company) request.getAttribute("Company"); %>
-                <%= com.getQiyename() %>
+				<% Company com =(Company) request.getAttribute("Company"); %>
+                <%=com.getQiyename() %>
 				</strong> <span>www.cssmoban.com</span>
 			</div>
 
@@ -69,9 +74,9 @@
 		<ul class="header-nav-ul am-collapse am-in">
 			<li class="on"><a href="index.jsp" name="index">首页</a></li>
 			<li><a href="about.jsp" name="about">关于我们</a></li>
-			<li><a href="productlist.html" name="show">产品展示</a></li>
-			<li><a href="article_listservlet" name="new">新闻资讯</a></li>
-			<li><a href="contact.html" name="message">联系我们</a>
+			<li><a href="productlist.jsp" name="show">产品展示</a></li>
+			<li><a href="article_list.jsp" name="new">新闻资讯</a></li>
+			<li><a href="contact.jsp" name="message">联系我们</a>
 				<div class="secondary-menu">
 
 					<ul>
@@ -88,6 +93,16 @@
 	</div>
 
 	</header>
+	<div class="am-slider am-slider-default" data-am-flexslider="{playAfterPaused: 8000}">
+    <ul class="am-slides">
+        <% List<HeadImgEntity> head=( List<HeadImgEntity>)request.getAttribute("head"); 
+        for(int i=0;i<head.size();i++) {%>
+        
+        <li><img src="<%=head.get(i).getImgurl() %>" alt="" ></li>
+        <%} %>
+    </ul>
+</div>
+<body>
 
 </body>
 </html>

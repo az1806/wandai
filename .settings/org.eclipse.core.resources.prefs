@@ -1,5 +1,6 @@
 eclipse.preferences.version=1
-encoding//WebRoot/article_list.jsp=UTF-8
+encoding//WebRoot/about.jsp=UTF-8
 encoding//WebRoot/index.jsp=UTF-8
-encoding//WebRoot/lunbo.jsp=UTF-8
+encoding//WebRoot/productlist.jsp=UTF-8
+encoding//WebRoot/yemian.jsp=UTF-8
 encoding//src/com/MoYin/Servlet/HeadServlet.java=UTF-8

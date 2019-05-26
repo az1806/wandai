@@ -9,5 +9,7 @@ public interface CompanyDao {
 int updateCompany(Company com);
 	
 	Company queryCompany();
+
+	//Company querySQL();
 	
 }

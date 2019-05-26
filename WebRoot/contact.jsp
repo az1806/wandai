@@ -1,15 +1,13 @@
 <%@ page language="java" import="java.util.*,com.MoYin.Entity.*" pageEncoding="UTF-8"%>
 <%
-	String path = request.getContextPath();
-	String basePath = request.getScheme() + "://"
-			+ request.getServerName() + ":" + request.getServerPort()
-			+ path + "/";
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
-<head>
-<title>魔音</title> ﻿
+  <head>
+   <title>魔音</title> ﻿
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="format-detection" content="telephone=no">
@@ -42,51 +40,31 @@
 <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
 <meta http-equiv="description" content="This is my page">
 </head>
-
-<body>
-	﻿
-	<footer>
-	<div>
-		<div class="footer-info">
-			<div class="footer-content">
-				<img src="images/qccode.png" alt="">
-				<div>
-					<!--  <p>招商热线:0714-8868331</p>  -->
-					<div class="footer-box">
-						<i class="icon-tel"></i> <span>公司电话:</span> 
-						<span> <%
- 	Company com = (Company) request.getAttribute("foot");
- %>
- <%=com.getPhone() %>
-						</span>
-					</div>
-					<div class="footer-box">
-						<i class="icon-email"></i> <span>公司邮箱:</span> <span>
-						<%=com.getEmail() %>
-						</span>
-					</div>
-					<div class="footer-box">
-						<i class="icon-address"></i> <span>公司地址:</span> <span><%=com.getDizhi() %></span>
-					</div>
-				</div>
-			</div>
-		</div>
-		<style>
-.footer-bottom a {
-	color: #F1404B
-}
-</style>
-		<div class="footer-bottom">
-			<div style="text-align:center;color:#fff;line-height:100px;">
-				<span><a href="http://www.haothemes.com/" target="_blank"
-					title="好主题">好主题</a>提供 - More Templates <a
-					href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a>
-					- Collect from <a href="http://www.cssmoban.com/" title="网页模板"
-					target="_blank">网页模板</a>
-				</span>
-			</div>
-		</div>
-	</div>
-	</footer>
-</body>
+  
+  <body>
+    <jsp:include page="/HeadServlet" ></jsp:include>
+    
+    <main class="contact">
+        <iframe src="map.html" width="636" height="378" frameborder="0" scrolling="no"></iframe>
+        <ul>
+            <li>
+                <span><img src="images/contact1.png"/></span>
+                <h2>联系我们</h2>
+                <p><%Company com=(Company) request.getAttribute("Company"); %>
+                <%= com.getPhone()%></p>
+            </li>
+            <li>
+                <span><img src="images/contact2.png"/></span>
+                <h2>公司地址</h2>
+                <p><%=com.getDizhi() %></p>
+            </li>
+            <li>
+                <span><img src="images/contact3.png"/></span>
+                <h2>电子邮箱</h2>
+                <p><%=com.getEmail() %></p>
+            </li>
+        </ul>
+    </main>
+    <jsp:include page="/FootServlet" ></jsp:include>
+  </body>
 </html>

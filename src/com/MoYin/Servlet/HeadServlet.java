@@ -1,7 +1,9 @@
 package com.MoYin.Servlet;
 
+//import java.io.IOException;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -9,8 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.MoYin.Dao.CompanyDao;
+import com.MoYin.Dao.HeadImgDao;
 import com.MoYin.Daoimpl.CompanyDaoImpl;
+import com.MoYin.Daoimpl.HeadImgDaoImpl;
 import com.MoYin.Entity.Company;
+import com.MoYin.Entity.HeadImgEntity;
 
 public class HeadServlet extends HttpServlet {
 
@@ -32,13 +37,17 @@ public class HeadServlet extends HttpServlet {
 			throws ServletException, IOException {
 
 		response.setCharacterEncoding("UTF-8");
-		//request.setCharacterEncoding("UTF-8");
+		request.setCharacterEncoding("UTF-8");
 		System.out.println("进入 HeadServlet");
+		CompanyDao comDao=new CompanyDaoImpl();
+		Company com=comDao.queryCompany();
+		request.setAttribute("Company",com);
 		// jdbc company
-	CompanyDao comDao=new CompanyDaoImpl();
-		Company com = comDao.queryCompany();
-System.out.print(com);
-		request.setAttribute("Company", com);
+		HeadImgDao headDao = new HeadImgDaoImpl();
+		
+		List<HeadImgEntity> head=headDao.getHeadImgEntity();
+		System.out.print(head);
+		request.setAttribute("head", head);
 		request.getRequestDispatcher("/head.jsp").include(request, response);
 
 	}

@@ -2,7 +2,7 @@
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-%>
+Index index=(Index)request.getAttribute("index");%>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html lang="zh-cn">
@@ -35,14 +35,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </head>
 <body>
 <jsp:include page="/HeadServlet" ></jsp:include>
-<div class="am-slider am-slider-default" data-am-flexslider="{playAfterPaused: 8000}">
+<!-- <div class="am-slider am-slider-default" data-am-flexslider="{playAfterPaused: 8000}">
     <ul class="am-slides">
         <li><img src="./images/banner2.jpg" alt="" ></li>
         <li><img src="./images/banner2.jpg" alt="" ></li>
         <li><img src="./images/banner2.jpg" alt="" ></li>
         <li><img src="./images/banner2.jpg" alt="" ></li>
     </ul>
-</div>
+</div> -->
 
 <section class="about-section">
     <div>
@@ -54,7 +54,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </div>
     <div></div>
     <div class="about-content">
-        <div class="about-image"> <img src="./images/banner3.jpg" alt=""></div>
+        <div class="about-image"> <img src="./images/j.PNG" alt=""></div>
 
         <article><% Company com =(Company) request.getAttribute("Company"); %>
                 <%=com.getQiyeshiji() %>
@@ -65,7 +65,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
     <div class="about-box">
         <div class="about-leftbox">
-            <img src="images/banner4.jpg" alt="">
+            <img src="images/m.jpg" alt="">
         </div>
         <div class="about-rightbox">
             <h1>企业文化</h1>

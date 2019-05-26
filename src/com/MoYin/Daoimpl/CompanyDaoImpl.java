@@ -17,6 +17,7 @@ public class CompanyDaoImpl implements  CompanyDao{
 	}
 
 	public Company queryCompany() {
+		
 		Company com = new Company();
 		
 		ResultSet rs = DBManager.querySQL("select * from jianjiebiao ;");
@@ -66,5 +67,10 @@ public class CompanyDaoImpl implements  CompanyDao{
 			
 			
 		}
+
+	public Company querySQL() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	}
 
