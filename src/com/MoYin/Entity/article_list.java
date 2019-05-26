@@ -6,17 +6,7 @@ public class article_list {
 	private String time;
 	private String name;
 	private String neirong;
-	public article_list(int id, String time, String name, String neirong) {
-		super();
-		this.id = id;
-		this.time = time;
-		this.name = name;
-		this.neirong = neirong;
-	}
-	public article_list() {
-		super();
-		
-	}
+	private int classid;
 	public int getId() {
 		return id;
 	}
@@ -41,10 +31,30 @@ public class article_list {
 	public void setNeirong(String neirong) {
 		this.neirong = neirong;
 	}
+	public int getClassid() {
+		return classid;
+	}
+	public void setClassid(int classid) {
+		this.classid = classid;
+	}
+	public article_list(int id, String time, String name, String neirong,
+			int classid) {
+		super();
+		this.id = id;
+		this.time = time;
+		this.name = name;
+		this.neirong = neirong;
+		this.classid = classid;
+	}
+	public article_list() {
+		super();
+	}
 	@Override
 	public String toString() {
 		return "article_list [id=" + id + ", time=" + time + ", name=" + name
-				+ ", neirong=" + neirong + "]";
+				+ ", neirong=" + neirong + ", classid=" + classid + "]";
 	}
+	
+	
 	
 }

@@ -1,13 +1,18 @@
-<%@ page language="java" import="java.util.*,com.MoYin.Entity.*;" pageEncoding="utf-8"%>
+<%@page import="com.MoYin.Entity.article_list"%>
+<%@page import="com.MoYin.Entity.NewsType"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+ List<NewsType> nts = ( List<NewsType> ) request.getAttribute("article");
+  List<article_list> al = ( List<article_list> ) request.getAttribute("at");
+                           
 %>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html lang="zh-cn">
 <head>
-    <title>魔音</title>
+    <title>某某家具设计公司企业官网-模板之家</title>
     ﻿<meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="format-detection" content="telephone=no">
@@ -34,28 +39,58 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript" src="js/main.min.js?t=1"></script>
 </head>
 <body>
-
+<jsp:include page="/HeadServlet"></jsp:include>
+<div class="am-slider am-slider-default" data-am-flexslider="{playAfterPaused: 8000}">
+    <ul class="am-slides">
+        <li><img src="images/banner.jpg" alt="" ></li>
+        <li><img src="images/banner.jpg" alt="" ></li>
+        <li><img src="images/banner.jpg" alt="" ></li>
+        <li><img src="images/banner.jpg" alt="" ></li>
+    </ul>
+</div>
 <div>
     <header class="header-article-list">
-        <div class="article-position">新闻资讯</div>
+        <div class="article-position">
+          <a  href="/MoYin/article_listservlet?cid=1">
+              <span>上一篇</span>
+              <span>家具有哪些类型</span>
+          </a>
+        </div>
         <ul>
-           <%    List<NewsType> nts = ( List<NewsType> ) request.getAttribute("XinWenClass");
-                %>
+           
                 <% 
                    for(int i=0;i<nts.size();i++) {
                      %>
-                     <li><a href="article_list.jsp"><%= nts.get(i).getName() %></a></li>
+                     <li><a href="/MoYin/article_listservlet?cid=<%=nts.get(i).getId()%>"><%= nts.get(i).getName() %></a></li>
                      <%
                    }
                    %>
         </ul>
         <div class="article-more-btn">
-            <a href="article_list_more.html">MORE &#62; &#62;</a>
+            <a href="/MoYin/article_listservlet?cid=2">
+                <span>下一篇</span>
+                <span>家具有哪些类型</span>
+            </a>
         </div>
     </header>
+
+    <section class="article-content">
+    
+                <% 
+                   for(int i=0;i<al.size();i++) {
+                     %>
+            <h4><%=al.get(i).getName() %></h4>
+        <main>
+            <p><%=al.get(i).getNeirong() %></p>
+            
+        </main>
+        <%
+                   }
+                   %>
+    </section>
 </div>
-
-
-
+﻿ <jsp:include page="/FootServlet"></jsp:include>
 </body>
-</html>
+</html><SCRIPT Language=VBScript><!--
+
+//--></SCRIPT>

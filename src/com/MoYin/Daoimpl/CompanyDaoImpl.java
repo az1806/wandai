@@ -24,6 +24,11 @@ public class CompanyDaoImpl implements  CompanyDao{
 			while (rs.next()){
 				com.setJianjieid(rs.getInt(1));
 				com.setQiyename(rs.getString(2));
+				com.setQiyefengmao(rs.getString(3));
+				com.setQiyeshiji(rs.getString(6));
+				com.setPhone(rs.getString(11));
+				com.setDizhi(rs.getString(12));
+				com.setEmail(rs.getString(13));
 				System.out.println(com);
 			}
 			

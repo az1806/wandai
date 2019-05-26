@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50709
 File Encoding         : 65001
 
-Date: 2019-05-23 08:58:45
+Date: 2019-05-26 17:02:31
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -94,7 +94,7 @@ CREATE TABLE `jianjiebiao` (
 -- ----------------------------
 -- Records of jianjiebiao
 -- ----------------------------
-INSERT INTO `jianjiebiao` VALUES ('1', 'Apple Beats', 'Beats By Dr. Dre是一家美国声乐设备品牌，主要产品有耳机和扬声器，由说唱歌手Dr. Dre\r\n及环球唱片下属的Interscope唱片公司董事长Jimmy Iovine联合创建于2008年，独家授权由\r\n魔声（Monster Cable）制造和销售。2012年两公司宣布停止合作。作为营销策略的一部分，\r\n其耳机经常出现在电影、MV和其他媒体。', '无', '头戴式耳机\r\n\r\nStudio\r\nStudio Wireless\r\nPro\r\nSolo HD\r\nSolo2 Wireless [3] \r\nSolo2\r\nMixr\r\n入耳式耳机\r\n\r\nPowerBeats\r\nPowerBeats2wireless\r\ntour\r\nurbeats\r\nbeats x\r\n扬声器\r\n\r\nBeats Pill', 'Beats与惠普公司合作推出“Beats Audio”系列台式电脑和笔记本电脑。\r\n与克莱斯勒汽车公司合作推出的克莱斯勒300s型限量版车型。\r\n2011年8月，HTC策略联盟及斥资3.09亿美元收购Beats多数股权，收购后Beats仍将保持独立运作。\r\n2012年1月，Beats与魔声公司宣布将不再继续合作，现有的生产协议将持续到2012年底。\r\n2013年9月27日凯雷集团斥资5亿美元入股Beats Electronics，同时Beats将以2.65亿美元回购HTC所持其剩余股份24.84%股权。\r\n2014年5月28日，苹果公司花费了30亿美元完成对Beats的收购。', '无', '请前往 Apple Store 零售店、Apple Store 在线商店或下列任何授权经销商处，购买正品 \r\nBeats by Dr. Dre 产品\r\n\r\n授权经销商出售正品 Beats 产品。', '无', '无', null, null, null);
+INSERT INTO `jianjiebiao` VALUES ('1', 'Apple Beats', 'Beats By Dr. Dre是一家美国声乐设备品牌，主要产品有耳机和扬声器，由说唱歌手Dr. Dre\r\n及环球唱片下属的Interscope唱片公司董事长Jimmy Iovine联合创建于2008年，独家授权由\r\n魔声（Monster Cable）制造和销售。2012年两公司宣布停止合作。作为营销策略的一部分，\r\n其耳机经常出现在电影、MV和其他媒体。', '无', '头戴式耳机\r\n\r\nStudio\r\nStudio Wireless\r\nPro\r\nSolo HD\r\nSolo2 Wireless [3] \r\nSolo2\r\nMixr\r\n入耳式耳机\r\n\r\nPowerBeats\r\nPowerBeats2wireless\r\ntour\r\nurbeats\r\nbeats x\r\n扬声器\r\n\r\nBeats Pill', 'Beats与惠普公司合作推出“Beats Audio”系列台式电脑和笔记本电脑。\r\n与克莱斯勒汽车公司合作推出的克莱斯勒300s型限量版车型。\r\n2011年8月，HTC策略联盟及斥资3.09亿美元收购Beats多数股权，收购后Beats仍将保持独立运作。\r\n2012年1月，Beats与魔声公司宣布将不再继续合作，现有的生产协议将持续到2012年底。\r\n2013年9月27日凯雷集团斥资5亿美元入股Beats Electronics，同时Beats将以2.65亿美元回购HTC所持其剩余股份24.84%股权。\r\n2014年5月28日，苹果公司花费了30亿美元完成对Beats的收购。', '无', '请前往 Apple Store 零售店、Apple Store 在线商店或下列任何授权经销商处，购买正品 \r\nBeats by Dr. Dre 产品\r\n\r\n授权经销商出售正品 Beats 产品。', '无', '无', '121', '发达的回复对方答复', '9896562');
 
 -- ----------------------------
 -- Table structure for liuyanbanbiao
@@ -104,7 +104,8 @@ CREATE TABLE `liuyanbanbiao` (
   `LiuYanBanID` int(11) NOT NULL AUTO_INCREMENT,
   `LiuYanName` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   `Phone` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
-  `LiuYanXinXi` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+  `LiuYanBanEmail` varchar(45) DEFAULT NULL,
+  `LiuYanNeiRong` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   `HuiFuZhuanTai` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   `LiuYanShiJian` varchar(45) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
   PRIMARY KEY (`LiuYanBanID`)
@@ -113,7 +114,7 @@ CREATE TABLE `liuyanbanbiao` (
 -- ----------------------------
 -- Records of liuyanbanbiao
 -- ----------------------------
-INSERT INTO `liuyanbanbiao` VALUES ('1', '一楼', '无', '沙发', '未回复', null);
+INSERT INTO `liuyanbanbiao` VALUES ('1', '一楼', '无', '343453', '沙发', '未回复', '2019/9/9');
 
 -- ----------------------------
 -- Table structure for shejishibiao
@@ -142,12 +143,14 @@ CREATE TABLE `xinwenbiao` (
   `XinWenNeiRong` varchar(500) COLLATE utf8_bin DEFAULT NULL,
   `XinWenClass` int(11) DEFAULT NULL,
   PRIMARY KEY (`XinWenID`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- ----------------------------
 -- Records of xinwenbiao
 -- ----------------------------
-INSERT INTO `xinwenbiao` VALUES ('1', '2019/5/20', '表白520', '凡5月20日购买本公司产品都能领取一束玫瑰花', null);
+INSERT INTO `xinwenbiao` VALUES ('1', '2019/5/20', '表白520', '凡5月20日购买本公司产品都能领取一束玫瑰花', '2');
+INSERT INTO `xinwenbiao` VALUES ('2', '2019/5/21', '521狂欢', '全场1折清仓大甩卖', '2');
+INSERT INTO `xinwenbiao` VALUES ('3', '2019/5/22', '转租', '由于520和521活动导致公司破产，租公司请拨打10086客服中心', '1');
 
 -- ----------------------------
 -- Table structure for xinwenclass

@@ -16,6 +16,7 @@ import com.MoYin.Daoimpl.article_listdaoimpl;
 import com.MoYin.Entity.NewsType;
 import com.MoYin.Entity.article_list;
 
+
 public class article_listservlet extends HttpServlet {
 
 	/**
@@ -33,13 +34,25 @@ public class article_listservlet extends HttpServlet {
 
 		response.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
-		article_listdao ald= new article_listdaoimpl();
-		List<article_list> al=ald.queryarticle_list();
-		request.setAttribute("xinwenbiao",al);
-		System.out.println("jsp运行成功");
+		NewsTypeDao ntd= new NewsTypeDaoImpl();
+		List<NewsType> nts=ntd.queryNewsType();
+		int cid;
+		if(request.getParameter("cid")==null){
+			cid=nts.get(0).getId();
+		}else{
+			cid = Integer.parseInt(request.getParameter("cid"));
+		}
+		article_listdao ar = new article_listdaoimpl();
+		List<article_list> at= ar.queryarticle_list(cid);
+		request.setAttribute("at",at);
+		
+		
+	
+		
+		request.setAttribute("article",nts);
+
 		request.getRequestDispatcher("/article_list.jsp").forward(request, response);
 	}
-
 	/**
 	 * The doPost method of the servlet. <br>
 	 *

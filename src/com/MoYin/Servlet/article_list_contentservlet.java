@@ -10,10 +10,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.MoYin.Dao.NewsTypeDao;
+import com.MoYin.Dao.article_listdao;
 import com.MoYin.Daoimpl.NewsTypeDaoImpl;
+import com.MoYin.Daoimpl.article_listdaoimpl;
 import com.MoYin.Entity.NewsType;
+import com.MoYin.Entity.article_list;
 
-public class NewsTypeServlet extends HttpServlet {
+public class article_list_contentservlet extends HttpServlet {
 
 	/**
 	 * The doGet method of the servlet. <br>
@@ -27,16 +30,27 @@ public class NewsTypeServlet extends HttpServlet {
 	 */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
-		
+
+		response.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
 		NewsTypeDao ntd= new NewsTypeDaoImpl();
 		List<NewsType> nts=ntd.queryNewsType();
+		int cid;
+		if(request.getParameter("cid")==null){
+			cid=nts.get(0).getId();
+		}else{
+			cid = Integer.parseInt(request.getParameter("cid"));
+		}
+		article_listdao ar = new article_listdaoimpl();
+		List<article_list> at= ar.queryarticle_list(cid);
+		request.setAttribute("at",at);
 		
-		System.out.println("qwe");
 		
-		request.setAttribute("XinWenClass", nts);
-		request.getRequestDispatcher("/newstype.jsp").include(request, response);
+	
+		
+		request.setAttribute("article",nts);
+
+		request.getRequestDispatcher("/article_list_content.jsp").forward(request, response);
 	}
 
 	/**

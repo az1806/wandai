@@ -7,5 +7,5 @@ import com.MoYin.Entity.article_list;
 
 public interface article_listdao {
 
-	List<article_list> queryarticle_list();
+	List<article_list> queryarticle_list(int cid);
 }

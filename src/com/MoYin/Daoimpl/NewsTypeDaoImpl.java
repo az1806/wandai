@@ -17,11 +17,10 @@ public class NewsTypeDaoImpl implements NewsTypeDao{
 
 	public List<NewsType> queryNewsType() {
 		List<NewsType> nts = new ArrayList<NewsType>();
-		ResultSet rs = DBManager.querySQL("select * from xinwenclass;");
+		ResultSet rs = DBManager.querySQL("select * from xinwenclass");
 		try {
 			while (rs.next()) {
 				NewsType nt = new NewsType();
-
 				nt.setId(rs.getInt(1));
 				nt.setName(rs.getString(2));
 				nts.add(nt);

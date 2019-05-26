@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*,com.MoYin.Entity.*;" pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -34,8 +34,33 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <script type="text/javascript" src="js/main.min.js?t=1"></script>
 </head>
 <body>
-
 <jsp:include page="/HeadServlet"></jsp:include>
+<script>  
+function checkForm(){   
+	 	var lyname=documet.getElementById("lyname").value;
+ 		var lyphone=documet.getElementById("lyphone").value;
+	 	var lyeamil=documet.getElementById("lyeamil").value;
+ 		var lyneirong=documet.getElementById("lyneirong").value;
+	 if(lyname=" "){
+ 		aleat("姓名不能为空");
+ 		return  false;
+ 	} if(lyphone=" "){
+ 		aleat("手机号不能为空");
+ 		return  false;
+ 	}
+ 	 if(lyeamil=" "){
+ 		aleat("邮箱不能为空");
+ 		return  false;
+ 	}
+ 	 if(lyneirong=" "){
+ 		aleat("留言不能为空");
+ 		return  false;
+ 	}
+ 	
+ return  true;
+ }
+ </script>
+
 <div class="am-slider am-slider-default" data-am-flexslider="{playAfterPaused: 8000}">
     <ul class="am-slides">
         <li><img src="images/banner.jpg" alt="" ></li>
@@ -46,51 +71,32 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </div>
 <div>
     <header class="header-article-list">
-        <div class="article-position">新闻资讯</div>
-        <ul>
-           <%    List<NewsType> nts = ( List<NewsType> ) request.getAttribute("article");
-                %>
-                <% 
-                   for(int i=0;i<nts.size();i++) {
-                     %>
-                     <li><a href="/MoYin/article_listservlet?cid=<%=nts.get(i).getId()%>"><%= nts.get(i).getName() %></a></li>
-                     <%
-                   }
-                   %>
-        </ul>
-        <div class="article-more-btn">
-            <a href="article_list_more.html">MORE &#62; &#62;</a>
-        </div>
+        <h1>在线留言</h1>
+
     </header>
-    <section class="article-content">
- 
-        <ul>
-            <li>
-            <%    List<article_list> al = ( List<article_list> ) request.getAttribute("at");
-                %>
-                <% 
-                   for(int i=0;i<al.size();i++) {
-                     %>
-                <div class="article-date">
-                    <strong><%=al.get(i).getId() %></strong>
-                    <p><%=al.get(i).getTime() %></p>
-                </div>
-                <div class="article-info"> 
-                    <a href="/MoYin/article_list_contentservlet?cid=<%=al.get(i).getClassid()%>">
-                        <h3><%=al.get(i).getName() %></h3>
-                        <p><%=al.get(i).getNeirong() %></p>
-                    </a>
-                </div>
-                <%
-                   }
-                   %>
-            </li>
-        </ul>
-        
-</section>
+<div>
+   <form class="message-form" method="post" action="" onsubmit="return checkForm(this)" >
+
+       <label>姓名
+           <input type="text" name="username">
+           <span>*</span>
+       </label>
+       <label>电话
+           <input type="text" name="tel">
+           <span>*</span>
+       </label>
+       <label>邮箱
+           <input type="email" name="email">
+           <span>*</span>
+       </label>
+       <label>内容
+           <textarea></textarea>
+           <span>*</span>
+       </label>
+       <button type="button" class="am-btn am-btn-danger">提交</button>
+   </form>
 </div>
-
-
-﻿ <jsp:include page="/FootServlet"></jsp:include>
+</div>
+﻿<jsp:include page="/FootServlet"></jsp:include>
 </body>
 </html>
